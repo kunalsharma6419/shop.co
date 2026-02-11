@@ -100,7 +100,7 @@ shop.co/
 ---
 
 ## Time Taken
- **Total:** 6-7 hours
+ **Total:** 5-6 hours
 
 ## Quick Reference
 - For static page structure, see `public/templates/*.html`.

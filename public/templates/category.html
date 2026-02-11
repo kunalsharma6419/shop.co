@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casual - SHOP.CO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+  </style>
+</head>
+<body class="font-sans antialiased bg-white text-black">
+
+  <!-- Top Banner -->
+  <div id="topBanner" class="bg-black text-white text-center text-xs md:text-sm py-2 px-4 relative">
+    <span>Sign up and get 20% off to your first order. <a href="#" class="underline font-medium">Sign Up Now</a></span>
+    <button onclick="document.getElementById('topBanner').style.display='none'" class="absolute right-4 top-1/2 -translate-y-1/2 text-white hidden md:block" aria-label="Close banner">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="bg-white border-b border-gray-200">
+    <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-16 flex items-center justify-between h-14 md:h-16">
+      <button class="lg:hidden mr-3" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <a href="index.html" class="font-serif font-bold text-2xl md:text-[32px] tracking-tight shrink-0">SHOP.CO</a>
+      <div class="hidden lg:flex items-center gap-6 ml-8">
+        <button class="flex items-center gap-1 text-sm">Shop <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <a href="#" class="text-sm hover:underline">On Sale</a>
+        <a href="#" class="text-sm hover:underline">New Arrivals</a>
+        <a href="#" class="text-sm hover:underline">Brands</a>
+      </div>
+      <div class="hidden md:flex items-center flex-1 max-w-[480px] mx-6 bg-gray-100 rounded-full px-4 py-2.5 gap-2">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" placeholder="Search for products..." class="bg-transparent text-sm w-full outline-none placeholder:text-gray-400" />
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="md:hidden" aria-label="Search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+        <a href="cart.html" aria-label="Cart"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></a>
+        <button aria-label="Account"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg></button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-200 px-4 py-4 flex flex-col gap-3">
+      <button class="flex items-center justify-between text-sm py-2">Shop <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <a href="#" class="text-sm py-2">On Sale</a>
+      <a href="#" class="text-sm py-2">New Arrivals</a>
+      <a href="#" class="text-sm py-2">Brands</a>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-16 pt-4 pb-4">
+    <div class="flex items-center gap-2 text-sm text-gray-500">
+      <a href="index.html" class="hover:text-black">Home</a>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      <span class="text-black">Casual</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-16 pb-12">
+    <div class="flex gap-5">
+
+      <!-- Desktop Filter Sidebar -->
+      <div class="hidden lg:block w-[295px] shrink-0">
+        <div class="border border-gray-200 rounded-2xl p-5 lg:p-6">
+          <div class="flex items-center justify-between mb-5">
+            <h3 class="font-bold text-lg">Filters</h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity="0.4"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>
+          </div>
+          <div class="border-t border-gray-200"></div>
+          <!-- Categories -->
+          <div class="py-5">
+            <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>T-shirts</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>Shorts</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>Shirts</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>Hoodie</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>Jeans</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+          </div>
+          <div class="border-t border-gray-200"></div>
+          <!-- Price -->
+          <div class="py-5">
+            <div class="flex items-center justify-between mb-4"><h4 class="font-bold">Price</h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
+            <div class="relative px-1">
+              <div class="h-1.5 bg-gray-200 rounded-full relative"><div class="absolute h-full bg-black rounded-full" style="left: 0%; right: 60%;"></div></div>
+              <div class="flex items-center justify-between mt-3 text-sm"><span>$50</span><span>$200</span></div>
+            </div>
+          </div>
+          <div class="border-t border-gray-200"></div>
+          <!-- Colors -->
+          <div class="py-5">
+            <div class="flex items-center justify-between mb-4"><h4 class="font-bold">Colors</h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
+            <div class="flex flex-wrap gap-3">
+              <button class="w-9 h-9 rounded-full" style="background-color: #00C12B;" aria-label="Green"></button>
+              <button class="w-9 h-9 rounded-full" style="background-color: #F50606;" aria-label="Red"></button>
+              <button class="w-9 h-9 rounded-full" style="background-color: #F5DD06;" aria-label="Yellow"></button>
+              <button class="w-9 h-9 rounded-full" style="background-color: #F57906;" aria-label="Orange"></button>
+              <button class="w-9 h-9 rounded-full" style="background-color: #06CAF5;" aria-label="Cyan"></button>
+              <button class="w-9 h-9 rounded-full flex items-center justify-center" style="background-color: #063AF5;" aria-label="Blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></button>
+              <button class="w-9 h-9 rounded-full" style="background-color: #7D06F5;" aria-label="Purple"></button>
+              <button class="w-9 h-9 rounded-full" style="background-color: #F506A4;" aria-label="Pink"></button>
+              <button class="w-9 h-9 rounded-full border border-gray-200" style="background-color: #FFFFFF;" aria-label="White"></button>
+              <button class="w-9 h-9 rounded-full" style="background-color: #000000;" aria-label="Black"></button>
+            </div>
+          </div>
+          <div class="border-t border-gray-200"></div>
+          <!-- Size -->
+          <div class="py-5">
+            <div class="flex items-center justify-between mb-4"><h4 class="font-bold">Size</h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
+            <div class="flex flex-wrap gap-2">
+              <button class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-500 hover:bg-gray-200">XX-Small</button>
+              <button class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-500 hover:bg-gray-200">X-Small</button>
+              <button class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-500 hover:bg-gray-200">Small</button>
+              <button class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-500 hover:bg-gray-200">Medium</button>
+              <button class="px-4 py-2 rounded-full text-sm font-medium bg-black text-white">Large</button>
+              <button class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-500 hover:bg-gray-200">X-Large</button>
+              <button class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-500 hover:bg-gray-200">XX-Large</button>
+              <button class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-500 hover:bg-gray-200">3X-Large</button>
+              <button class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-500 hover:bg-gray-200">4X-Large</button>
+            </div>
+          </div>
+          <div class="border-t border-gray-200"></div>
+          <!-- Dress Style -->
+          <div class="py-5">
+            <div class="flex items-center justify-between mb-4"><h4 class="font-bold">Dress Style</h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
+            <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>Casual</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>Formal</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>Party</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>Gym</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+          </div>
+          <button class="w-full bg-black text-white font-medium text-sm rounded-full py-3.5 hover:opacity-90 transition-opacity">Apply Filter</button>
+        </div>
+      </div>
+
+      <!-- Mobile Filter Button (shows on small screens) -->
+
+      <!-- Main Product Grid -->
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-3">
+            <h1 class="font-serif font-bold text-[32px]">Casual</h1>
+            <button class="lg:hidden" onclick="document.getElementById('mobileFilter').classList.remove('hidden')" aria-label="Open filters">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>
+            </button>
+          </div>
+          <div class="flex items-center gap-2 text-sm text-gray-500">
+            <span class="hidden md:inline">Showing 1-10 of 100 Products</span>
+            <span class="hidden md:inline ml-2">Sort by:</span>
+            <button class="flex items-center gap-1 font-medium text-black">Most Popular <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
+          <!-- Product 1: Gradient Graphic T-shirt -->
+          <a href="product.html" class="group block">
+            <div class="bg-gray-100 rounded-2xl overflow-hidden aspect-square relative"><img src="/images/products/gradient-graphic.jpg" alt="Gradient Graphic T-shirt" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" /></div>
+            <div class="mt-3">
+              <h3 class="font-medium text-sm md:text-base">Gradient Graphic T-shirt</h3>
+              <div class="flex items-center gap-1.5 mt-1.5"><div class="flex items-center gap-0.5"><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="currentColor" stroke-width="2"/></svg><svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><span class="text-sm text-gray-500">3.5/5</span></div>
+              <div class="flex items-center gap-2 mt-1.5"><span class="font-bold text-lg md:text-xl">$145</span></div>
+            </div>
+          </a>
+          <!-- Product 2: Polo with Tipping Details -->
+          <a href="product.html" class="group block">
+            <div class="bg-gray-100 rounded-2xl overflow-hidden aspect-square relative"><img src="/images/products/polo-tipping.jpg" alt="Polo with Tipping Details" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" /></div>
+            <div class="mt-3">
+              <h3 class="font-medium text-sm md:text-base">Polo with Tipping Details</h3>
+              <div class="flex items-center gap-1.5 mt-1.5"><div class="flex items-center gap-0.5"><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="currentColor" stroke-width="2"/></svg></div><span class="text-sm text-gray-500">4.5/5</span></div>
+              <div class="flex items-center gap-2 mt-1.5"><span class="font-bold text-lg md:text-xl">$180</span></div>
+            </div>
+          </a>
+          <!-- Product 3: Black Striped T-shirt -->
+          <a href="product.html" class="group block">
+            <div class="bg-gray-100 rounded-2xl overflow-hidden aspect-square relative"><img src="/images/products/black-striped.jpg" alt="Black Striped T-shirt" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" /></div>
+            <div class="mt-3">
+              <h3 class="font-medium text-sm md:text-base">Black Striped T-shirt</h3>
+              <div class="flex items-center gap-1.5 mt-1.5"><div class="flex items-center gap-0.5"><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><span class="text-sm text-gray-500">5.0/5</span></div>
+              <div class="flex items-center gap-2 mt-1.5"><span class="font-bold text-lg md:text-xl">$120</span><span class="text-gray-400 line-through text-lg md:text-xl">$150</span><span class="bg-red-50 text-red-500 text-xs font-medium rounded-full px-2 py-0.5">-30%</span></div>
+            </div>
+          </a>
+          <!-- Product 4: Skinny Fit Jeans -->
+          <a href="product.html" class="group block">
+            <div class="bg-gray-100 rounded-2xl overflow-hidden aspect-square relative"><img src="/images/products/skinny-jeans.jpg" alt="Skinny Fit Jeans" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" /></div>
+            <div class="mt-3">
+              <h3 class="font-medium text-sm md:text-base">Skinny Fit Jeans</h3>
+              <div class="flex items-center gap-1.5 mt-1.5"><div class="flex items-center gap-0.5"><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="currentColor" stroke-width="2"/></svg><svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><span class="text-sm text-gray-500">3.5/5</span></div>
+              <div class="flex items-center gap-2 mt-1.5"><span class="font-bold text-lg md:text-xl">$240</span><span class="text-gray-400 line-through text-lg md:text-xl">$260</span><span class="bg-red-50 text-red-500 text-xs font-medium rounded-full px-2 py-0.5">-20%</span></div>
+            </div>
+          </a>
+          <!-- Product 5: Checkered Shirt -->
+          <a href="product.html" class="group block">
+            <div class="bg-gray-100 rounded-2xl overflow-hidden aspect-square relative"><img src="/images/products/checkered-shirt.jpg" alt="Checkered Shirt" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" /></div>
+            <div class="mt-3">
+              <h3 class="font-medium text-sm md:text-base">Checkered Shirt</h3>
+              <div class="flex items-center gap-1.5 mt-1.5"><div class="flex items-center gap-0.5"><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="currentColor" stroke-width="2"/></svg></div><span class="text-sm text-gray-500">4.5/5</span></div>
+              <div class="flex items-center gap-2 mt-1.5"><span class="font-bold text-lg md:text-xl">$180</span></div>
+            </div>
+          </a>
+          <!-- Product 6: Sleeve Striped T-shirt -->
+          <a href="product.html" class="group block">
+            <div class="bg-gray-100 rounded-2xl overflow-hidden aspect-square relative"><img src="/images/products/sleeve-striped.jpg" alt="Sleeve Striped T-shirt" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" /></div>
+            <div class="mt-3">
+              <h3 class="font-medium text-sm md:text-base">Sleeve Striped T-shirt</h3>
+              <div class="flex items-center gap-1.5 mt-1.5"><div class="flex items-center gap-0.5"><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="none" stroke="currentColor" stroke-width="2"/></svg></div><span class="text-sm text-gray-500">4.5/5</span></div>
+              <div class="flex items-center gap-2 mt-1.5"><span class="font-bold text-lg md:text-xl">$130</span><span class="text-gray-400 line-through text-lg md:text-xl">$160</span><span class="bg-red-50 text-red-500 text-xs font-medium rounded-full px-2 py-0.5">-30%</span></div>
+            </div>
+          </a>
+          <!-- Product 7: Vertical Striped Shirt -->
+          <a href="product.html" class="group block">
+            <div class="bg-gray-100 rounded-2xl overflow-hidden aspect-square relative"><img src="/images/products/vertical-striped.jpg" alt="Vertical Striped Shirt" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" /></div>
+            <div class="mt-3">
+              <h3 class="font-medium text-sm md:text-base">Vertical Striped Shirt</h3>
+              <div class="flex items-center gap-1.5 mt-1.5"><div class="flex items-center gap-0.5"><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><span class="text-sm text-gray-500">5.0/5</span></div>
+              <div class="flex items-center gap-2 mt-1.5"><span class="font-bold text-lg md:text-xl">$212</span><span class="text-gray-400 line-through text-lg md:text-xl">$232</span><span class="bg-red-50 text-red-500 text-xs font-medium rounded-full px-2 py-0.5">-20%</span></div>
+            </div>
+          </a>
+          <!-- Product 8: Courage Graphic T-shirt -->
+          <a href="product.html" class="group block">
+            <div class="bg-gray-100 rounded-2xl overflow-hidden aspect-square relative"><img src="/images/products/courage-graphic.jpg" alt="Courage Graphic T-shirt" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" /></div>
+            <div class="mt-3">
+              <h3 class="font-medium text-sm md:text-base">Courage Graphic T-shirt</h3>
+              <div class="flex items-center gap-1.5 mt-1.5"><div class="flex items-center gap-0.5"><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><span class="text-sm text-gray-500">4.0/5</span></div>
+              <div class="flex items-center gap-2 mt-1.5"><span class="font-bold text-lg md:text-xl">$145</span></div>
+            </div>
+          </a>
+          <!-- Product 9: Loose Fit Bermuda Shorts -->
+          <a href="product.html" class="group block">
+            <div class="bg-gray-100 rounded-2xl overflow-hidden aspect-square relative"><img src="/images/products/bermuda-shorts.jpg" alt="Loose Fit Bermuda Shorts" class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" /></div>
+            <div class="mt-3">
+              <h3 class="font-medium text-sm md:text-base">Loose Fit Bermuda Shorts</h3>
+              <div class="flex items-center gap-1.5 mt-1.5"><div class="flex items-center gap-0.5"><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="w-4 h-4 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><span class="text-sm text-gray-500">3.0/5</span></div>
+              <div class="flex items-center gap-2 mt-1.5"><span class="font-bold text-lg md:text-xl">$80</span></div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex items-center justify-between mt-8 pt-4 border-t border-gray-200">
+          <button class="flex items-center gap-2 text-sm font-medium border border-gray-200 rounded-lg px-4 py-2 hover:bg-gray-100 transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>Previous
+          </button>
+          <div class="flex items-center gap-1">
+            <button class="w-10 h-10 rounded-lg text-sm font-medium bg-black text-white">1</button>
+            <button class="w-10 h-10 rounded-lg text-sm font-medium hover:bg-gray-100">2</button>
+            <button class="w-10 h-10 rounded-lg text-sm font-medium hover:bg-gray-100">3</button>
+            <span class="px-2 text-gray-400">...</span>
+            <button class="w-10 h-10 rounded-lg text-sm font-medium hover:bg-gray-100">8</button>
+            <button class="w-10 h-10 rounded-lg text-sm font-medium hover:bg-gray-100">9</button>
+            <button class="w-10 h-10 rounded-lg text-sm font-medium hover:bg-gray-100">10</button>
+          </div>
+          <button class="flex items-center gap-2 text-sm font-medium border border-gray-200 rounded-lg px-4 py-2 hover:bg-gray-100 transition-colors">
+            Next <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Filter Overlay -->
+  <div id="mobileFilter" class="hidden fixed inset-0 z-50 bg-white lg:hidden">
+    <div class="flex items-center justify-between p-4 border-b border-gray-200">
+      <h2 class="font-bold text-xl">Filters</h2>
+      <button onclick="document.getElementById('mobileFilter').classList.add('hidden')" aria-label="Close filters">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="overflow-y-auto h-[calc(100vh-57px)] p-4">
+      <!-- Duplicate filter content for mobile -->
+      <div class="py-5">
+        <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>T-shirts</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>Shorts</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>Shirts</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>Hoodie</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>Jeans</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
+      <div class="border-t border-gray-200"></div>
+      <div class="py-5">
+        <div class="flex items-center justify-between mb-4"><h4 class="font-bold">Price</h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
+        <div class="relative px-1"><div class="h-1.5 bg-gray-200 rounded-full relative"><div class="absolute h-full bg-black rounded-full" style="left: 0%; right: 60%;"></div></div><div class="flex items-center justify-between mt-3 text-sm"><span>$50</span><span>$200</span></div></div>
+      </div>
+      <div class="border-t border-gray-200"></div>
+      <div class="py-5">
+        <div class="flex items-center justify-between mb-4"><h4 class="font-bold">Colors</h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
+        <div class="flex flex-wrap gap-3">
+          <button class="w-9 h-9 rounded-full" style="background-color: #00C12B;"></button>
+          <button class="w-9 h-9 rounded-full" style="background-color: #F50606;"></button>
+          <button class="w-9 h-9 rounded-full" style="background-color: #F5DD06;"></button>
+          <button class="w-9 h-9 rounded-full" style="background-color: #F57906;"></button>
+          <button class="w-9 h-9 rounded-full" style="background-color: #06CAF5;"></button>
+          <button class="w-9 h-9 rounded-full flex items-center justify-center" style="background-color: #063AF5;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></button>
+          <button class="w-9 h-9 rounded-full" style="background-color: #7D06F5;"></button>
+          <button class="w-9 h-9 rounded-full" style="background-color: #F506A4;"></button>
+          <button class="w-9 h-9 rounded-full border border-gray-200" style="background-color: #FFFFFF;"></button>
+          <button class="w-9 h-9 rounded-full" style="background-color: #000000;"></button>
+        </div>
+      </div>
+      <div class="border-t border-gray-200"></div>
+      <div class="py-5">
+        <div class="flex items-center justify-between mb-4"><h4 class="font-bold">Size</h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
+        <div class="flex flex-wrap gap-2">
+          <button class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-500">XX-Small</button>
+          <button class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-500">X-Small</button>
+          <button class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-500">Small</button>
+          <button class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-500">Medium</button>
+          <button class="px-4 py-2 rounded-full text-sm font-medium bg-black text-white">Large</button>
+          <button class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-500">X-Large</button>
+          <button class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-500">XX-Large</button>
+          <button class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-500">3X-Large</button>
+          <button class="px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-500">4X-Large</button>
+        </div>
+      </div>
+      <div class="border-t border-gray-200"></div>
+      <div class="py-5">
+        <div class="flex items-center justify-between mb-4"><h4 class="font-bold">Dress Style</h4><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></div>
+        <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>Casual</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>Formal</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>Party</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <button class="flex items-center justify-between w-full py-2 text-sm text-gray-500 hover:text-black"><span>Gym</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
+      <button class="w-full bg-black text-white font-medium text-sm rounded-full py-3.5 hover:opacity-90 transition-opacity">Apply Filter</button>
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <section class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-16 -mb-16 relative z-10">
+    <div class="bg-black rounded-2xl md:rounded-[20px] px-6 py-8 md:px-16 md:py-9 flex flex-col md:flex-row items-center justify-between gap-6">
+      <h2 class="font-serif font-bold text-[32px] md:text-[40px] leading-tight text-white" style="text-wrap: balance; max-width: 550px;">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
+      <div class="flex flex-col gap-3 w-full max-w-[350px]">
+        <div class="flex items-center gap-3 bg-white rounded-full px-4 py-3">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <input type="email" placeholder="Enter your email address" class="bg-transparent text-sm w-full outline-none placeholder:text-gray-400 text-black" />
+        </div>
+        <button class="bg-white text-black font-medium text-sm rounded-full py-3 px-6 hover:bg-gray-100 transition-colors">Subscribe to Newsletter</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 pt-24 mt-0">
+    <div class="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-16">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 py-10 md:py-12 border-b border-gray-200">
+        <div class="col-span-2 md:col-span-1">
+          <a href="index.html" class="font-serif font-bold text-[28px] md:text-[32px] tracking-tight">SHOP.CO</a>
+          <p class="text-sm text-gray-500 mt-3 leading-relaxed max-w-[250px]">We have clothes that suits your style and which you're proud to wear. From women to men.</p>
+          <div class="flex items-center gap-3 mt-4">
+            <a href="#" class="w-7 h-7 rounded-full border border-gray-200 bg-white flex items-center justify-center" aria-label="Twitter"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+            <a href="#" class="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" class="w-7 h-7 rounded-full border border-gray-200 bg-white flex items-center justify-center" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" class="w-7 h-7 rounded-full border border-gray-200 bg-white flex items-center justify-center" aria-label="Github"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+          </div>
+        </div>
+        <div><h4 class="font-medium text-sm tracking-[3px] uppercase mb-4">Company</h4><ul class="flex flex-col gap-3"><li><a href="#" class="text-sm text-gray-500 hover:text-black">About</a></li><li><a href="#" class="text-sm text-gray-500 hover:text-black">Features</a></li><li><a href="#" class="text-sm text-gray-500 hover:text-black">Works</a></li><li><a href="#" class="text-sm text-gray-500 hover:text-black">Career</a></li></ul></div>
+        <div><h4 class="font-medium text-sm tracking-[3px] uppercase mb-4">Help</h4><ul class="flex flex-col gap-3"><li><a href="#" class="text-sm text-gray-500 hover:text-black">Customer Support</a></li><li><a href="#" class="text-sm text-gray-500 hover:text-black">Delivery Details</a></li><li><a href="#" class="text-sm text-gray-500 hover:text-black">Terms & Conditions</a></li><li><a href="#" class="text-sm text-gray-500 hover:text-black">Privacy Policy</a></li></ul></div>
+        <div><h4 class="font-medium text-sm tracking-[3px] uppercase mb-4">FAQ</h4><ul class="flex flex-col gap-3"><li><a href="#" class="text-sm text-gray-500 hover:text-black">Account</a></li><li><a href="#" class="text-sm text-gray-500 hover:text-black">Manage Deliveries</a></li><li><a href="#" class="text-sm text-gray-500 hover:text-black">Orders</a></li><li><a href="#" class="text-sm text-gray-500 hover:text-black">Payments</a></li></ul></div>
+        <div><h4 class="font-medium text-sm tracking-[3px] uppercase mb-4">Resources</h4><ul class="flex flex-col gap-3"><li><a href="#" class="text-sm text-gray-500 hover:text-black">Free eBooks</a></li><li><a href="#" class="text-sm text-gray-500 hover:text-black">Development Tutorial</a></li><li><a href="#" class="text-sm text-gray-500 hover:text-black">How to - Blog</a></li><li><a href="#" class="text-sm text-gray-500 hover:text-black">Youtube Playlist</a></li></ul></div>
+      </div>
+      <div class="flex flex-col md:flex-row items-center justify-between py-5 gap-4">
+        <p class="text-sm text-gray-500">Shop.co &copy; 2000-2023. All Rights Reserved</p>
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-8 bg-white rounded border border-gray-200 flex items-center justify-center"><span class="text-[8px] font-medium text-gray-500">Visa</span></div>
+          <div class="w-12 h-8 bg-white rounded border border-gray-200 flex items-center justify-center"><span class="text-[8px] font-medium text-gray-500">Mastercard</span></div>
+          <div class="w-12 h-8 bg-white rounded border border-gray-200 flex items-center justify-center"><span class="text-[8px] font-medium text-gray-500">PayPal</span></div>
+          <div class="w-12 h-8 bg-white rounded border border-gray-200 flex items-center justify-center"><span class="text-[8px] font-medium text-gray-500">Apple Pay</span></div>
+          <div class="w-12 h-8 bg-white rounded border border-gray-200 flex items-center justify-center"><span class="text-[8px] font-medium text-gray-500">Google Pay</span></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
